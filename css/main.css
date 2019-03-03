@@ -1,0 +1,927 @@
+/* PARALLAX SCROLLING EXPERIMENT
+   Master Styles
+   Author: Jonathan Nicol (f6design.com)
+*****************************************************************/
+
+
+/* Global reset
+   http://meyerweb.com/eric/tools/css/reset/
+*****************************************************************/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video
+{
+    font: inherit;
+    font-size: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    vertical-align: baseline;
+
+    border: 0;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section
+{
+    display: block;
+}
+body
+{
+    line-height: 1;
+}
+ol,
+ul
+{
+    list-style: none;
+}
+blockquote,
+q
+{
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after
+{
+    content: '';
+    content: none;
+}
+table
+{
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+/* Extended base styles (site specific)
+*****************************************************************/
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+html
+{
+    overflow-y: scroll; /* always force a scrollbar in non-IE */
+}
+body
+{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+
+    overflow-x: hidden;
+
+    height: 8300px;
+
+    color: white;
+    background: rgb(113,0,140);
+    background: linear-gradient(180deg, rgba(113,0,140,1) 0%, rgba(0,97,88,1) 0%, rgba(126,18,131,1) 0%, rgba(46,0,99,1) 100%, rgba(0,212,255,1) 100%);
+}
+h1
+{
+    color: white;
+}
+a,
+a:link,
+a:active,
+a:visited
+{
+    -webkit-transition: color .25s ease-out;
+       -moz-transition: color .25s ease-out;
+         -o-transition: color .25s ease-out;
+            transition: color .25s ease-out;
+    text-decoration: none;
+
+    color: white;
+    outline: none;
+}
+a:hover
+{
+    color: #000;
+}
+.frog {
+    width: 12vw;
+    margin-top: 21vw;
+    padding-left: 55vw;
+    animation-name: frog;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+
+}
+@keyframes frog
+{
+    0%
+    {
+        transform: translateY(0);
+    }
+    50%
+    {
+        transform: translateY(-100px);
+    }
+    100%
+    {
+        transform: translateY(0);
+    }
+}
+.knopka
+{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 6vw;
+    font-weight: 700;
+
+    display: block;
+
+    margin-top: 52vw;
+    margin-right: 20vw;
+    margin-bottom: -1vw;
+    margin-left: 25vw;
+    padding: 5vw 3vw;
+
+    transition: all .25s ease-in;
+    text-align: center;
+    text-decoration: none;
+
+    color: #00c6ff;
+    border: 1px solid #00c6ff;
+    background-image: linear-gradient(to left, transparent, transparent 50%, #00c6ff 50%, #00c6ff);
+    background-position: 100% 0;
+    background-size: 200% 100%;
+}
+
+.knopka:hover
+{
+    color: #fff;
+    background-position: 0 0;
+}
+
+img
+{
+    display: block;
+}
+p
+{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 2vw;
+    line-height: 2vw;
+}
+.zel
+{
+    width: 10vw;
+
+}
+.zela
+{
+    width: 10vw;
+
+}
+.zelas
+{
+    width: 10vw;
+
+}
+.zelos
+{
+    width: 10vw;
+
+}
+.zels
+{
+    width: 10vw;
+
+}
+/* Common shared styles
+*****************************************************************/
+
+hr
+{
+    height: 3px;
+    margin: 0;
+
+    border: none;
+    border-top: 1px solid #3b3b3b;
+    border-bottom: 1px solid #3b3b3b;
+}
+
+/* Page structure
+*****************************************************************/
+
+#wrapper
+{
+    position: relative;
+}
+#branding
+{
+    width: 100%;
+
+    background: #fff;
+}
+#branding h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #483D8B;
+    width: 940px;
+    /* margin: 1vw; */
+    padding: 2vw;
+    text-transform: uppercase;
+}
+/* Nav
+*****************************************************************/
+
+nav#primary
+{
+    position: fixed;
+    z-index: 5;
+    top: 50%;
+    right: 16px;
+
+    margin-top: -40px;
+}
+nav#primary li
+{
+    position: relative;
+
+    height: 20px;
+}
+nav#primary a
+{
+    display: block;
+
+    width: 20px;
+    height: 20px;
+
+    text-indent: -9999px;
+
+    background: transparent url('../img/nav-dot.png') 4px 4px no-repeat;
+}
+nav#primary a:hover,
+nav#primary a.active
+{
+    background: transparent url('../img/nav-dot.png') 4px -16px no-repeat;
+}
+nav#primary h1
+{
+    position: absolute;
+    top: -7px;
+    right: 22px;
+
+    display: none;
+
+    padding: 4px 20px 4px 7px;
+
+    white-space: nowrap;
+
+    color: #fff;
+    background: transparent url('../img/nav-arrow.png') 100% 50% no-repeat;;
+}
+nav.next-prev
+{
+    margin: 20px 0 0 0;
+}
+a.prev,
+a.next
+{
+    display: block;
+
+    width: 15px;
+    height: 11px;
+
+    text-indent: -9999px;
+}
+a.prev
+{
+    margin: 0 auto 5px auto;
+
+    background: transparent url('../img/scroll-arrow-up.png') 0 0 no-repeat;
+}
+a.prev:hover
+{
+    background: transparent url('../img/scroll-arrow-up.png') 0 -11px no-repeat;
+}
+a.next
+{
+    margin: 5px auto 0 auto;
+
+    background: transparent url('../img/scroll-arrow-down.png') -1px 0 no-repeat;
+}
+a.next:hover
+{
+    background: transparent url('../img/scroll-arrow-down.png') -1px -11px no-repeat;
+}
+
+/* Parallax
+*****************************************************************/
+
+/* content */
+#content
+{
+    line-height: 1.7;
+
+    position: relative;
+    z-index: 4;
+
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+#content article
+{
+    width: 300px;
+}
+#manned-flight,
+#frameless-parachute,
+#english-channel,
+#about
+{
+    padding-top: 105px;
+}
+#manned-flight
+{
+    position: absolute;
+    top: 0;
+}
+#frameless-parachute
+{
+    position: absolute;
+    top: 1090px;
+}
+#english-channel
+{
+    position: absolute;
+    top: 2180px;
+}
+#content h1
+{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 10vw;
+    font-weight: 700;
+    line-height: 65px;
+
+    margin: 0 0 25px 0;
+}
+#about
+{
+    position: absolute;
+    top: 3270px;
+}
+#about2
+{
+    position: absolute;
+    top: 4360px;
+}
+#about3
+{
+    position: absolute;
+    top: 5450px;
+}
+#about4
+{
+    position: absolute;
+    top: 6540px;
+}
+#about5
+{
+    position: absolute;
+    top: 7630px;
+}
+/* foreground (ballons/landscape) */
+/* передний фон, меняешь left и top */
+#parallax-bg3
+{
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 50%; /* align left edge with center of viewport */
+
+    width: 940px;
+    margin-left: -470px; /* move left by half element's width */
+}
+/* balloon */
+#bg3-1
+{
+	position: absolute;
+	top: -2vw;
+	left: 34vw;
+	height: 61vw;
+}
+#bg3-2
+{
+	position: absolute;
+	top: 66vw;
+	left: 33vw;
+	width: 75vw;
+}
+#bg3-3
+{
+	position: absolute;
+	top: 168vw;
+	left: 7vw;
+	width: 83vw;
+}
+#bg3-4
+{
+	position: absolute;
+	top: 245vw;
+	left: 28vw;
+	width: 63vw;
+}
+#bg3-5
+{
+	position: absolute;
+	    top: 323vw;
+	    left: 33vw;
+	    width: 60vw;
+}
+#bg3-6
+{
+    position: absolute;
+    top: 401vw;
+    left: 29vw;
+
+    width: 76vw;
+}
+#bg3-7
+{
+    position: absolute;
+    top: 477vw;
+    left: 22vw;
+
+    width: 94vw;
+}
+#bg3-8
+{
+	position: absolute;
+	top: 567vw;
+	left: 14vw;
+	width: 80vw;
+}
+}
+/* midground (clouds) */
+/* средний фон, меняешь left и top */
+#parallax-bg2
+{
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 50%; /* align left edge with center of viewport */
+
+    width: 1200px;
+    margin-left: -600px; /* move left by half element's width */
+}
+#bg2-1
+{
+    position: absolute;
+    top: 162px;
+    left: 200px;
+}
+#bg2-2
+{
+    position: absolute;
+    top: 300px;
+    left: 1150px;
+}
+#bg2-3
+{
+    position: absolute;
+    top: 543px;
+    left: -35px;
+}
+#bg2-4
+{
+    position: absolute;
+    top: 1180px;
+    left: 250px;
+}
+#bg2-5
+{
+    position: absolute;
+    top: 900px;
+    left: 890px;
+}
+#bg2-6
+{
+    position: absolute;
+    top: 2400px;
+    left: 200px;
+}
+#bg2-7
+{
+    position: absolute;
+    top: 900px;
+    left: 1150px;
+}
+#bg2-8
+{
+    position: absolute;
+    top: 900px;
+    left: -35px;
+}
+#bg2-9
+{
+    position: absolute;
+    top: 900px;
+    left: 250px;
+}
+#bg2-10
+{
+    position: absolute;
+    top: 900px;
+    left: 890px;
+}
+
+/* background (clouds) */
+/* задний фон, меняешь left и top */
+#parallax-bg1
+{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 50%; /* align left edge with center of viewport */
+
+    width: 1200px;
+    margin-left: -600px; /* move left by half element's width */
+}
+#bg1-1
+{
+    position: absolute;
+    top: 85px;
+    left: -270px;
+}
+#bg1-2
+{
+    position: absolute;
+    top: 440px;
+    left: 795px;
+}
+#bg1-3
+{
+    position: absolute;
+    top: 900px;
+    left: -220px;
+}
+#bg1-4
+{
+    position: absolute;
+    top: 1020px;
+    left: 450px;
+}
+#bg1-5
+{
+    position: absolute;
+    top: 1020px;
+    left: 450px;
+}
+#bg1-6
+{
+    position: absolute;
+    top: 1020px;
+    left: 450px;
+}
+#bg1-7
+{
+    position: absolute;
+    top: 1020px;
+    left: 450px;
+}
+#bg1-8
+{
+    position: absolute;
+    top: 1020px;
+    left: 450px;
+}
+@media (min-width: 375px) {
+	p{
+		font-size: 4vw;
+		line-height: 4vw;
+		margin: 0 0 4vw 1vw;
+}
+#content h1 {
+    margin: 0 0 2vw 1vw;
+		font-size: 9vw;
+		line-height: 8vw;
+}
+#branding h1 {
+    font-size: 4vw;
+	}
+	#bg3-1 {
+    position: absolute;
+    top: -2vw;
+    left: 29vw;
+    height: 95vw;
+}
+#bg3-2 {
+    position: absolute;
+    top: 87vw;
+    left: 29vw;
+    width: 86vw;
+}
+#bg3-3 {
+    position: absolute;
+    top: 206vw;
+    left: 9vw;
+    width: 85vw;
+}
+#bg3-2 {
+    position: absolute;
+    top: 91vw;
+    left: 29vw;
+    width: 89vw;
+}
+#bg3-4 {
+    position: absolute;
+    top: 273vw;
+    left: 28vw;
+    width: 69vw;
+}
+#bg3-5 {
+    position: absolute;
+    top: 356vw;
+    left: 21vw;
+    width: 93vw;
+}
+#bg3-6 {
+    position: absolute;
+    top: 448vw;
+    left: 13vw;
+    width: 101vw;
+}
+#bg3-7 {
+    position: absolute;
+    top: 524vw;
+    left: 16vw;
+    width: 99vw;
+}
+#bg3-8 {
+    position: absolute;
+    top: 618vw;
+    left: 12vw;
+    width: 101vw;
+}
+}
+@media (min-width: 768px) {
+
+  .picturestexts {
+    display: grid;
+    margin-top: 18vw;
+    /* left: 8vw; */
+    /* width: 23vw; */
+    margin-right: -61vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 200px 200px auto 200px 200px 200px auto 200px 200px auto;
+    grid-gap: 25px;
+        grid: repeat(2, 1fr) / repeat(2, 1fr);
+    justify-content: center;
+}
+.zel {
+    width: 35vw;
+    /* height: 25vw; */
+}
+.zela {
+    width: 35vw;
+    /* height: 10vw; */
+}
+.zelas {
+    width: 35vw;
+    /* height: 10vw; */
+}
+.zels {
+    width: 35vw;
+    /* height: 10vw; */
+}
+  #content article {
+    width: 36vw;
+}
+  #content h1 {
+    margin: 0 0 2vw 1vw;
+    font-size: 10vw;
+}
+p {
+
+    font-size: 3vw;
+    line-height: 3vw;
+        margin: 0 0 2vw 1vw;
+    text-align: -webkit-left;
+}
+#bg3-1 {
+	    top: 0vw;
+	    left: 34vw;
+	    height: 61vw;
+	}
+#bg3-2 {
+        top: 67vw;
+      }
+	#bg3-3 {
+    top: 179vw;
+}
+	#bg3-4{
+    top: 253vw;
+  }
+#bg3-5 {
+    top: 337vw;
+}
+#bg3-6 {
+    top: 423vw;
+}
+#bg3-7 {
+    top: 490vw;
+}
+#bg3-8 {
+    top: 501vw;
+}
+.frog{
+  padding-left: 53vw;
+}
+}
+
+@media (min-width: 1024px){
+  p {
+      font-size: 3vw;
+      line-height: 3vw;
+      margin: 0 0 3vw -1vw;
+    }
+    #content h1 {
+      margin: 0 0 2vw -1vw;
+      font-size: 10vw;
+  }
+#bg3-2 {
+top: 62vw;
+    left: 29vw;
+    width: 89vw;
+}
+.frog {
+    width: 12vw;
+    margin-top: 21vw;
+    padding-left: 55vw;
+  }
+  #content article {
+    width: 36vw;
+}
+#bg3-3 {
+    top: 177vw;
+}
+#bg3-4 {
+top: 245vw;
+}
+#bg3-5 {
+    top: 327vw;
+}
+
+#bg3-7 {
+top: 488vw;
+}
+#bg3-8 {
+top: 569vw;
+}
+
+}
+
+
+@media (min-width: 1440px){
+	p{
+		font-size: 2vw;
+line-height: 2vw;
+margin: 1px 0 3vw -5vw;
+	}
+	#bg3-1 {
+
+    top: -3vw;
+    left: 23vw;
+    height: 59vw;
+}
+#bg3-2 {
+
+    top: 46vw;
+    left: 36vw;
+    width: 58vw;
+}
+#content h1 {
+  font-size: 9vw;
+  line-height: 7vw;
+
+
+  margin: 0 0px 3vw -6vw;
+}
+#bg3-3 {
+
+    top: 108vw;
+    left: 2vw;
+    width: 77vw;
+}
+#bg3-4 {
+
+    top: 169vw;
+    left: 28vw;
+    width: 47vw;
+}
+#bg3-5 {
+
+    top: 220vw;
+    left: 20vw;
+    width: 58vw;
+}
+#bg3-6 {
+
+    top: 286vw;
+    left: 18vw;
+    width: 77vw;
+}
+#bg3-7 {
+
+    top: 338vw;
+    left: 12vw;
+    width: 74vw;
+}
+#bg3-8 {
+
+    top: 401vw;
+    left: 12vw;
+    width: 80vw;
+}
+}

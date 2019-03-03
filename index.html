@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>СНАДОБ</title>
+
+		<meta charset="utf-8" />
+		<meta name="description" content="A parallax scrolling experiment using jQuery" />
+<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
+		<link rel="stylesheet" media="all" href="css/main.css" />
+
+		<script src="js/modernizr.custom.37797.js"></script>
+		<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script>!window.jQuery && document.write('<script src="/js/jquery-1.6.1.min.js"><\/script>')</script>
+		<script src="js/parallax.js"></script>
+	</head>
+
+	<body>
+
+		<div id="wrapper">
+
+			<header id="branding">
+				<h1>СНАДОБ</h1>
+			</header>
+
+			<nav id="primary">
+				<ul> <!-- это точки навигации справа, если меняешь классы то в js тоже надо будет поменять -->
+					<li>
+						<h1>Начало истории</h1>
+						<a class="manned-flight" href="#manned-flight">View</a>
+					</li>
+					<li>
+						<h1>The frameless parachute</h1>
+						<a class="frameless-parachute" href="#frameless-parachute">View</a>
+					</li>
+					<li>
+						<h1>Over the English Channel</h1>
+						<a class="english-channel" href="#english-channel">View</a>
+					</li>
+					<li>
+						<h1>About</h1>
+						<a class="about" href="#about">View</a>
+					</li>
+					<li>
+						<h1>About2</h1>
+						<a class="about2" href="#about2">View</a>
+					</li>
+					<li>
+						<h1>About3</h1>
+						<a class="about3" href="#about3">View</a>
+					</li>
+					<li>
+						<h1>About4</h1>
+						<a class="about4" href="#about4">View</a>
+					</li>
+					<li>
+						<h1>About5</h1>
+						<a class="about5" href="#about5">View</a>
+					</li>
+
+				</ul>
+			</nav>
+
+			<div id="content"><!-- тут статьи, если менять href то в js тоже нужно будет поменять -->
+				<article id="manned-flight">
+					<header>
+						<h1>Начало истории</h1>
+					</header>
+					<p>История лавки "СНАДОБ" пустила свои корни еще в 1599 году, когда магия была легальной.Все были счастливы, и надеялись, что магия останется нетронутой. И вот, 2019 год, спустя столько лет, приходится самим добывать магию из настойки жаб.</p>
+					<nav class="next-prev">
+						<hr />
+						<a class="next frameless-parachute" href="#frameless-parachute">Next</a>
+					</nav>
+				</article>
+
+				<article id="frameless-parachute">
+					<header>
+						<h1>Неожиданно...</h1>
+					</header>
+					<p>Вдруг жаба очнулась, и решила покорить свет. Раскачавшись, она смогла вылезти на ружу, но поможет ли ей это?...</p>
+						<a class="prev manned-flight" href="#manned-flight">Prev</a>
+						<hr />
+						<a class="next english-channel" href="#english-channel">Next</a>
+					</nav>
+				</article>
+
+				<article id="english-channel">
+					<p>Раскачавшись, жабка вылезла на ружу, но теперь она в смятении, что же дальше делать?</p>
+					<nav class="next-prev">
+						<a class="prev frameless-parachute" href="#frameless-parachute">Prev</a>
+						<hr />
+						<a class="next about" href="#about">Next</a>
+					</nav>
+				</article>
+
+				<article id="about">
+					<header>
+						<h1>Неполучилось...</h1>
+					</header>
+					<p>Жабка была растроенна, но взяла все свои силы в маленький кулачок, и решила покушать. Ничего не предвещало беды, но она не смогла дотянуться до жучка, ведь она была такой большой.</p>
+					<nav class="next-prev">
+						<a class="prev english-channel" href="#frameless-parachute">Prev</a>
+						<hr />
+						<a class="next about2" href="#about">Next</a>
+					</nav>
+				</article>
+				<article id="about2">
+					<header>
+						<h1>Эй,не сдавайся,Малыш!</h1>
+					</header>
+					<p>Маленькая жабка очень растроилась, что не смогла поймать эту кроху. Никогда не надо отчаиваться, и надо верить в лучшее! На этот случай, наши зелья помогут вам, обрести то, чего вам очень хочется.</p>
+					<nav class="next-prev">
+						<a class="prev about" href="#frameless-parachute">Prev</a>
+						<hr />
+						<a class="next about3" href="#about">Next</a>
+					</nav>
+				</article>
+				<article id="about3">
+					<header>
+						<h1>Подарок судьбы</h1>
+					</header>
+					<p>Мистер фрог очень счастлив, ведь теперь из-за зелья у него появилась подружка. Она не особо разговорчива, но для него - она все болото.</p>
+					<nav class="next-prev">
+						<a class="prev about2" href="#frameless-parachute">Prev</a>
+						<hr />
+						<a class="next about4" href="#about">Next</a>
+					</nav>
+				</article>
+				<article id="about4">
+					<header>
+						<h1>Надо немного выпить...</h1>
+					</header>
+					<p>Мистер жаба решил отпраздновать это событие, поэтому пригласил миссис жабанью отведать зелья. Ведь только зелье, может сделать этот мир - идеальным.</p>
+					<nav class="next-prev">
+						<a class="prev about3" href="#frameless-parachute">Prev</a>
+						<hr />
+						<a class="next about5" href="#about">Next</a>
+					</nav>
+				</article>
+				<article id="about5">
+					<header>
+						<h1>Жили они долго и счастливо.</h1>
+					</header>
+					<nav class="next-prev">
+						<a class="prev about4" href="#english-channel">Prev</a>
+						<hr />
+					</nav>
+					</nav>
+				</article>
+			</div>
+			<!-- Parallax foreground -->
+			<div id="parallax-bg3"><!-- фотки переднего слое -->
+				<img id="bg3-1" src="img2/1.svg"  alt="Montgolfier hot air balloon"/>
+				<img id="bg3-2" src="img2/2.svg"  alt="Frameless parachute"/>
+				<img id="bg3-3" src="img2/3.svg"  alt="Blanchard's air balloon"/>
+				<img id="bg3-4" src="img2/4.svg"  alt="Landscape with trees and cows"/>
+				<img id="bg3-5" src="img2/5.svg"  alt="Landscape with trees and cows"/>
+				<img id="bg3-6" src="img2/6.svg"  alt="Landscape with trees and cows"/>
+				<img id="bg3-7" src="img2/8.svg"  alt="Landscape with trees and cows"/>
+        <img id="bg3-8" src="img2/9.svg"  alt="Landscape with trees and cows"/>
+			</div>
+
+			<div>
+				<img src="img2/frog.svg" alt="" class="frog" />
+			</div>
+
+	</body>
+</html>
